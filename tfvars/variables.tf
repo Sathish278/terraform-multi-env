@@ -8,7 +8,7 @@ variable "instance_names" {
 }
 
 variable "environment" {
-  # default = "dev"
+  #  default = "dev"
 }
 
 variable "common_tags" {

@@ -12,11 +12,11 @@ resource "aws_instance" "expense" {
         }
     )
 }
-resource "aws_s3_bucket" "s3_bucket" {
+resource "aws_s3_bucket" "s3_bucket-dev" {
   bucket = "sathish-s3-demo-dev" # change this
 }
 
-resource "aws_dynamodb_table" "terraform_lock" {
+resource "aws_dynamodb_table" "terraform_lock-dev" {
   name           = "terraform-lock-dev"
   billing_mode   = "PAY_PER_REQUEST"
   hash_key       = "LockID"
@@ -26,11 +26,11 @@ resource "aws_dynamodb_table" "terraform_lock" {
     type = "S"
   }
 }
-resource "aws_s3_bucket" "s3_bucket" {
+resource "aws_s3_bucket" "s3_bucket-prod" {
   bucket = "sathish-s3-demo-prod" # change this
 }
 
-resource "aws_dynamodb_table" "terraform_lock" {
+resource "aws_dynamodb_table" "terraform_lock-prod" {
   name           = "terraform-lock-prod"
   billing_mode   = "PAY_PER_REQUEST"
   hash_key       = "LockID"
